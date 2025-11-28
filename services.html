@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Services Section</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ===================== AMAZON SERVICES SECTION CSS (Unique Style) ===================== */
+.services {
+    padding: 100px 8%;
+    background: #111111;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section Heading */
+.services-heading {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+.services-heading h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ff9900;
+    text-shadow: 0 0 15px #ff9900;
+}
+.services-heading p {
+    font-size: 18px;
+    color: #d1d1d1;
+    margin-top: 10px;
+}
+
+/* Services Cards Container */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Service Card */
+.service-card {
+    background: #1a1a1a;
+    border-radius: 20px;
+    width: 280px;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border: 1px solid #292929;
+    box-shadow: 0 0 15px rgba(255,153,0,0.2);
+    cursor: pointer;
+    overflow: hidden;
+}
+.service-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 35px rgba(255,153,0,0.5);
+}
+
+/* Icon Circle */
+.service-card i {
+    font-size: 50px;
+    color: #ff9900;
+    margin-bottom: 20px;
+    background: rgba(255,153,0,0.1);
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+}
+.service-card:hover i {
+    background: #ff9900;
+    color: #111;
+    transform: scale(1.2);
+}
+
+/* Card Title & Text */
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+.service-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #d1d1d1;
+}
+
+/* Glow Effect on Card */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,153,0,0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* Scroll Animation */
+.service-card.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+.service-card.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===================== AMAZON SERVICES SECTION ===================== -->
+<section class="services" id="services">
+
+    <!-- Section Heading -->
+    <div class="services-heading">
+        <h2>Our Amazon Services</h2>
+        <p>End-to-End Solutions to Boost Your Amazon Business</p>
+    </div>
+
+    <!-- Services Cards -->
+    <div class="services-container">
+        <div class="service-card animate">
+            <i class="fas fa-search-dollar"></i>
+            <h3>Product Research</h3>
+            <p>Discover profitable products & niches using market analysis tools.</p>
+        </div>
+        <div class="service-card animate">
+            <i class="fas fa-chart-line"></i>
+            <h3>Amazon PPC</h3>
+            <p>Create & optimize campaigns to maximize ROI and reduce ACOS.</p>
+        </div>
+        <div class="service-card animate">
+            <i class="fas fa-pencil-ruler"></i>
+            <h3>Listing Optimization</h3>
+            <p>SEO titles, bullets, images, and A+ content to boost rankings.</p>
+        </div>
+        <div class="service-card animate">
+            <i class="fas fa-rocket"></i>
+            <h3>Product Launch</h3>
+            <p>Strategic launch, giveaways, review generation & ranking boost.</p>
+        </div>
+        <div class="service-card animate">
+            <i class="fas fa-store"></i>
+            <h3>Store Management</h3>
+            <p>FBA/FBM handling, inventory control, and daily operations support.</p>
+        </div>
+        <div class="service-card animate">
+            <i class="fas fa-bullseye"></i>
+            <h3>Competitor Analysis</h3>
+            <p>Analyze competitors’ strategies for better positioning.</p>
+        </div>
+        <div class="service-card animate">
+            <i class="fas fa-user-shield"></i>
+            <h3>Brand Registry</h3>
+            <p>Protect your brand and enhance Amazon content through registry.</p>
+        </div>
+        <div class="service-card animate">
+            <i class="fas fa-headset"></i>
+            <h3>Customer Support</h3>
+            <p>Manage customer queries, returns, and feedback efficiently.</p>
+        </div>
+    </div>
+
+</section>
+
+<script>
+// Scroll Reveal Animation for Services
+const cards = document.querySelectorAll('.service-card.animate');
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight / 1.1;
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < triggerBottom) {
+            card.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amazon VA Contact - Black & Orange</title>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* =======================================================================
+   GLOBAL RESET + AMAZON ORANGE THEME
+======================================================================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* =======================================================================
+   SECTION WRAPPER
+======================================================================= */
+.contact-section{
+  width:100%;
+  padding:80px 5%;
+  position:relative;
+}
+
+/* Amazon Orange Heading */
+.contact-title h2{
+  font-size:44px;
+  text-align:center;
+  background:linear-gradient(to right, #FF9900, #ffb84d, #FF9900);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:700;
+  animation:orangeShine 3s infinite linear;
+}
+
+@keyframes orangeShine {
+  0% { filter:brightness(1); }
+  50% { filter:brightness(1.6); }
+  100% { filter:brightness(1); }
+}
+
+.contact-title p{
+  text-align:center;
+  margin-top:10px;
+  color:#d6d6d6;
+}
+
+/* =======================================================================
+   MAIN CONTAINER
+======================================================================= */
+.contact-container{
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+/* =======================================================================
+   LEFT INFO SECTION
+======================================================================= */
+.left-info{
+  width:45%;
+  min-width:320px;
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.info-card{
+  background:#0d0d0d;
+  padding:25px;
+  border-radius:15px;
+  border:1px solid rgba(255,153,0,0.5);
+  box-shadow:0 0 15px rgba(255,153,0,0.15);
+  transition:0.4s;
+}
+
+.info-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(255,153,0,0.5);
+}
+
+.info-card i{
+  color:#FF9900;
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.info-card h3{
+  font-size:20px;
+  color:#FF9900;
+}
+
+.info-card p{
+  margin-top:8px;
+  color:#ffffff;
+  opacity:0.9;
+  font-size:16px;
+}
+
+/* COPY BUTTON */
+.copy-btn{
+  margin-top:12px;
+  padding:8px 18px;
+  background:#FF9900;
+  color:#000;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  transition:.3s;
+}
+
+.copy-btn:hover{
+  box-shadow:0 0 15px #FF9900;
+}
+
+/* Social Icons */
+.social-area{
+  margin-top:20px;
+}
+
+.social-area a{
+  display:inline-block;
+  margin-right:12px;
+  font-size:22px;
+  color:#FF9900;
+  transition:.3s;
+}
+
+social-area a:hover{
+  transform:scale(1.2);
+  color:#ffffff;
+}
+
+/* =======================================================================
+   RIGHT FORM SECTION
+======================================================================= */
+.contact-form{
+  width:48%;
+  min-width:330px;
+  padding:30px;
+  background:#0d0d0d;
+  border-radius:20px;
+  border:1px solid rgba(255,153,0,0.5);
+  box-shadow:0 0 20px rgba(255,153,0,0.15);
+  transition:.4s;
+}
+
+.contact-form:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 35px rgba(255,153,0,0.5);
+}
+
+.contact-form h3{
+  font-size:25px;
+  color:#FF9900;
+  margin-bottom:20px;
+}
+
+/* Input fields */
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  background:#000;
+  border:1px solid #FF9900;
+  border-radius:10px;
+  color:#fff;
+  font-size:16px;
+  transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:#ffffff;
+  box-shadow:0 0 12px #FF9900;
+}
+
+.contact-form textarea{
+  resize:none;
+  height:140px;
+}
+
+/* Send Button */
+.send-btn{
+  width:100%;
+  padding:15px;
+  background:#FF9900;
+  font-size:18px;
+  font-weight:700;
+  border:none;
+  border-radius:10px;
+  color:#000;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.send-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 15px #FF9900;
+}
+
+/* Success message */
+#successMsg{
+  color:#00ff9d;
+  margin-top:15px;
+  text-align:center;
+  font-weight:600;
+  display:none;
+}
+
+/* =======================================================================
+   AMAZON ORANGE PARTICLE ANIMATION (NO IMAGE)
+======================================================================= */
+.contact-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle, rgba(255,153,0,0.25) 2px, transparent 2px);
+  background-size:40px 40px;
+  opacity:0.15;
+  animation:orangeMove 6s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes orangeMove {
+  0% { transform:translate(0,0); }
+  100% { transform:translate(40px,40px); }
+}
+
+/* =======================================================================
+   RESPONSIVE
+======================================================================= */
+@media(max-width:900px){
+  .left-info,
+  .contact-form{
+    width:100%;
+  }
+
+  .contact-title h2{
+    font-size:35px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="contact-section">
+
+  <div class="contact-title">
+    <h2>Contact Me</h2>
+    <p>Amazon Virtual Assistant | A-Z Services | Client Support</p>
+  </div>
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE INFO -->
+    <div class="left-info">
+
+      <div class="info-card">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+92 300 1122334</p>
+      </div>
+
+      <div class="info-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <p id="emailText">abdulrahmanofficial@gmail.com</p>
+        <button class="copy-btn" onclick="copyEmail()">Copy Email</button>
+      </div>
+
+      <div class="info-card">
+        <i class="fa-brands fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Chat instantly with me on WhatsApp</p>
+        <a href="https://wa.me/923001122334" target="_blank">
+          <button class="copy-btn">Open WhatsApp</button>
+        </a>
+      </div>
+
+      <div class="social-area">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <div class="contact-form">
+      <h3>Send Message</h3>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <textarea id="message" placeholder="Your Message..." required></textarea>
+
+        <button class="send-btn">Send Message</button>
+        <p id="successMsg">Message Sent Successfully ✔</p>
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+/* ==========================================================
+   COPY EMAIL FUNCTION
+========================================================== */
+function copyEmail(){
+  let email = document.getElementById("emailText").innerText;
+  navigator.clipboard.writeText(email);
+  alert("Copied: " + email);
+}
+
+/* ==========================================================
+   FORM SUBMIT SUCCESS POPUP
+========================================================== */
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("successMsg").style.display = "block";
+  setTimeout(() => {
+    document.getElementById("successMsg").style.display = "none";
+  }, 3000);
+});
+</script>
+
+</body>
+</html>

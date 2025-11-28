@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- =============================== ABOUT US SECTION =============================== -->
+    <style>
+        /* ===== ABOUT SECTION MAIN WRAPPER ===== */
+        .about {
+            padding: 120px 10%;
+            background: radial-gradient(circle at top left, #1a1a1a, #0c0c0c);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== GLOW ORBS BACKGROUND ===== */
+        .about .glow {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: #ff9900;
+            filter: blur(180px);
+            opacity: 0.25;
+            animation: moveGlow 10s infinite alternate ease-in-out;
+        }
+
+        .about .glow:nth-child(1) {
+            top: 5%;
+            left: 5%;
+        }
+
+        .about .glow:nth-child(2) {
+            bottom: 10%;
+            right: 10%;
+        }
+
+        @keyframes moveGlow {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(40px, 40px);
+            }
+        }
+
+        /* ===== SECTION HEADING ===== */
+        .section-title {
+            text-align: center;
+            font-size: 55px;
+            font-weight: 900;
+            color: #ff9900;
+            margin-bottom: 50px;
+            text-shadow: 0 0 20px rgba(255, 153, 0, 0.5);
+            letter-spacing: 2px;
+            animation: fadeUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== CONTAINER ===== */
+        .about-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* ===== LEFT SIDE: TEXT CONTENT ===== */
+        .about-text {
+            max-width: 55%;
+            animation: slideLeft 1.2s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: #e9e9e9;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            margin-top: 15px;
+            color: #d4d4d4;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* ===== LIST POINTS ===== */
+        .about-points {
+            margin-top: 20px;
+        }
+
+        .about-points li {
+            margin: 10px 0;
+            list-style: none;
+            color: #ffcf80;
+            font-size: 18px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .about-points li::before {
+            content: "✔";
+            font-weight: 900;
+            color: #ff9900;
+        }
+
+        /* ===== RIGHT SIDE IMAGE ===== */
+        .about-img {
+            max-width: 40%;
+            animation: slideRight 1.2s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 153, 0, 0.4);
+            box-shadow: 0 0 35px rgba(255, 153, 0, 0.3);
+            transition: 0.4s;
+            transform: perspective(900px) rotateY(-8deg);
+        }
+
+        .about-img img:hover {
+            transform: perspective(900px) rotateY(0deg) scale(1.05);
+            box-shadow: 0 0 55px rgba(255, 153, 0, 0.6);
+        }
+
+        /* ===== STATS CARDS ===== */
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 35px;
+        }
+
+        .stat-box {
+            background: rgba(255, 153, 0, 0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 153, 0, 0.2);
+            text-align: center;
+            flex: 1;
+            transition: 0.4s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 35px rgba(255, 153, 0, 0.6);
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: #ff9900;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #e2e2e2;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width: 900px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text,
+            .about-img {
+                max-width: 100%;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <section class="about" id="about">
+
+        <!-- BACKGROUND GLOW EFFECTS -->
+        <div class="glow"></div>
+        <div class="glow"></div>
+
+        <!-- SECTION TITLE -->
+        <h1 class="section-title">ABOUT ME</h1>
+
+        <div class="about-container">
+
+            <!-- LEFT SIDE TEXT -->
+            <div class="about-text">
+                <h3>Amazon Virtual Assistant & E-commerce Growth Expert</h3>
+
+                <p>
+                    I help Amazon businesses grow faster through professional product research,
+                    PPC management, listing optimization, launches, ranking, shipment plans,
+                    brand registry support, and complete Amazon seller account management.
+                </p>
+
+                <ul class="about-points">
+                    <li>Product Hunting (Advanced Tools + Manual)</li>
+                    <li>Product Sourcing & Supplier Negotiation</li>
+                    <li>Listing Optimization (SEO + A+ Content)</li>
+                    <li>Amazon PPC Setup & Deep Optimization</li>
+                    <li>Launch Strategy & Product Ranking</li>
+                    <li>FBA Shipment Plan & Inventory Control</li>
+                    <li>Complete Store Management</li>
+                </ul>
+
+                <!-- STATS BOXES -->
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="3">0+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="120">0+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="180">0+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE IMAGE -->
+            <div class="about-img">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732217.png">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ANIMATION JS ==================== -->
+    <script>
+        // COUNTER ANIMATION
+        const counters = document.querySelectorAll('.stat-number');
+        let started = false;
+
+        window.addEventListener("scroll", () => {
+            const sectionPos = document.querySelector(".about").offsetTop;
+            const screenPos = window.scrollY + window.innerHeight;
+
+            if (screenPos > sectionPos && !started) {
+                counters.forEach(counter => {
+                    let target = +counter.getAttribute("data-target");
+                    let count = 0;
+
+                    const updateCounter = () => {
+                        if (count < target) {
+                            count++;
+                            counter.textContent = count + "+";
+                            setTimeout(updateCounter, 20);
+                        }
+                    };
+                    updateCounter();
+                });
+                started = true;
+            }
+        });
+
+        // FADE-IN EFFECT ON SCROLL
+        window.addEventListener("scroll", function () {
+            const aboutText = document.querySelector(".about-text");
+            const aboutImg = document.querySelector(".about-img");
+
+            const position = aboutText.getBoundingClientRect().top;
+            const screen = window.innerHeight / 1.2;
+
+            if (position < screen) {
+                aboutText.style.opacity = "1";
+                aboutImg.style.opacity = "1";
+            }
+        });
+    </script>
+</body>
+
+</html>

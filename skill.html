@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Skills Section</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ===================== SKILLS SECTION CSS ===================== */
+.skills {
+    padding: 120px 10%;
+    background: #0b0b0b;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Glow Orbs */
+.skill-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #ff9900;
+    filter: blur(180px);
+    opacity: 0.2;
+    animation: floatGlow 8s infinite alternate ease-in-out;
+}
+.skill-glow.s1 { top:10%; left:5%; }
+.skill-glow.s2 { bottom:15%; right:10%; width:250px; height:250px; }
+.skill-glow.s3 { top:40%; right:30%; width:180px; height:180px; }
+
+@keyframes floatGlow { 0% { transform: translateY(0); } 100% { transform: translateY(50px); } }
+
+/* Section Heading */
+.skills-heading { text-align: center; margin-bottom: 60px; z-index: 10; position: relative; }
+.skills-heading h2 { font-size: 50px; font-weight: 900; color: #ff9900; text-shadow: 0 0 15px #ff9900; }
+.skills-heading p { color: #d1d1d1; margin-top: 10px; font-size: 18px; }
+
+/* Skills Grid */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Skill Box */
+.skill-box {
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #292929;
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.2);
+    text-align: center;
+    transition: 0.4s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(40px);
+}
+.skill-box:hover {
+    transform: translateY(-10px) scale(1.05) rotateX(6deg);
+    box-shadow: 0 0 40px rgba(255, 153, 0, 0.5);
+    border-color: #ff9900;
+}
+
+/* Skill Box Content */
+.skill-box i {
+    font-size: 45px;
+    color: #ff9900;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px #ff9900);
+}
+.skill-box h3 { font-size: 22px; color: #fff; margin-bottom: 8px; }
+.skill-box p { font-size: 15px; color: #d1d1d1; line-height: 1.5; margin-bottom: 15px; }
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    background: rgba(255,153,0,0.1);
+    height: 12px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.progress-bar .progress {
+    height: 100%;
+    width: 0;
+    background: #ff9900;
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+}
+.progress-bar .percent {
+    position: absolute;
+    right: 10px;
+    top: -25px;
+    color: #ff9900;
+    font-weight: 700;
+}
+
+/* Show Animation */
+.skill-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media(max-width:900px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===================== AMAZON SKILLS SECTION ===================== -->
+<section class="skills" id="skills">
+
+    <!-- Glow Background Orbs -->
+    <div class="skill-glow s1"></div>
+    <div class="skill-glow s2"></div>
+    <div class="skill-glow s3"></div>
+
+    <!-- Section Heading -->
+    <div class="skills-heading">
+        <h2>My Amazon Skills</h2>
+        <p>Expertise to Grow Your Amazon Store & Business</p>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-container">
+
+        <div class="skill-box" data-percent="95">
+            <i class="fas fa-search-dollar"></i>
+            <h3>Product Hunting</h3>
+            <p>Finding profitable niches & products using advanced tools.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+        <div class="skill-box" data-percent="90">
+            <i class="fas fa-chart-line"></i>
+            <h3>Amazon PPC</h3>
+            <p>Optimizing campaigns, lowering ACOS, maximizing sales.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+        <div class="skill-box" data-percent="88">
+            <i class="fas fa-pencil-ruler"></i>
+            <h3>Listing Optimization</h3>
+            <p>SEO titles, bullets, images & A+ content creation.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+        <div class="skill-box" data-percent="85">
+            <i class="fas fa-rocket"></i>
+            <h3>Product Launch</h3>
+            <p>Launch strategy, giveaways, ranking & reviews.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+        <div class="skill-box" data-percent="80">
+            <i class="fas fa-store"></i>
+            <h3>Store Management</h3>
+            <p>Complete FBA/FBM store handling & inventory control.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+        <div class="skill-box" data-percent="70">
+            <i class="fas fa-user-shield"></i>
+            <h3>Brand Registry</h3>
+            <p>Brand approval, A+ content, & intellectual property support.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+        <div class="skill-box" data-percent="75">
+            <i class="fas fa-bullseye"></i>
+            <h3>Competitor Analysis</h3>
+            <p>Analyzing competitors to improve listings & strategy.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+        <div class="skill-box" data-percent="80">
+            <i class="fas fa-box-open"></i>
+            <h3>Inventory Management</h3>
+            <p>Managing stock, FBA shipments, and warehouse operations.</p>
+            <div class="progress-bar"><div class="progress"></div><span class="percent">0%</span></div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+// Scroll Reveal + Progress Bars
+const skillBoxes = document.querySelectorAll(".skill-box");
+
+window.addEventListener("scroll", () => {
+    skillBoxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 100;
+
+        if (boxTop < trigger && !box.classList.contains('show')) {
+            box.classList.add("show");
+
+            const progress = box.querySelector(".progress");
+            const percent = box.getAttribute("data-percent");
+            progress.style.width = percent + "%";
+
+            const percentText = box.querySelector(".percent");
+            let count = 0;
+            const counter = setInterval(() => {
+                if (count >= percent) { clearInterval(counter); }
+                else { count++; percentText.innerText = count + "%"; }
+            }, 15);
+        }
+    });
+});
+</script>
+
+</body>
+</html>
